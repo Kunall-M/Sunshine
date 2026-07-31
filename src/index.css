@@ -1,0 +1,194 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Playfair Display', serif;
+    --font-handwriting: 'Caveat', cursive;
+    --font-alt-hand: 'Indie Flower', cursive;
+    --font-script: 'Sacramento', cursive;
+    --font-sans: 'Outfit', sans-serif;
+  }
+}
+
+.font-serif-title {
+  font-family: var(--font-serif);
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
+}
+
+.font-alt-hand {
+  font-family: var(--font-alt-hand);
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-outfit {
+  font-family: var(--font-sans);
+}
+
+/* 3D Perspective Container */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.perspective-1200 {
+  perspective: 1200px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Notebook Grid Paper Pattern */
+.bg-notebook-grid {
+  background-color: #FAF5E4;
+  background-image: 
+    linear-gradient(to right, rgba(230, 180, 190, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(230, 180, 190, 0.25) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* 3D Paper Layer Shadows */
+.paper-3d-card {
+  background-color: #FFFDF0;
+  box-shadow: 
+    0 1px 1px rgba(0,0,0,0.05),
+    0 4px 8px rgba(180, 50, 80, 0.08),
+    0 12px 24px rgba(180, 50, 80, 0.12),
+    0 24px 48px rgba(0,0,0,0.08);
+  transform-style: preserve-3d;
+}
+
+.paper-3d-card-dark {
+  background: linear-gradient(145deg, #A0090E, #670408);
+  box-shadow: 
+    0 4px 10px rgba(0,0,0,0.3),
+    0 15px 30px rgba(80,0,10,0.4),
+    0 30px 60px rgba(0,0,0,0.3);
+  transform-style: preserve-3d;
+}
+
+/* 3D Tactile Push Button Utility */
+.btn-3d-red {
+  background: linear-gradient(180deg, #EF233C 0%, #D90429 100%);
+  box-shadow: 0 6px 0 #900C3F, 0 12px 20px rgba(217, 4, 41, 0.35);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-3d-red:active {
+  transform: translateY(4px) translateZ(0);
+  box-shadow: 0 2px 0 #900C3F, 0 4px 10px rgba(217, 4, 41, 0.2);
+}
+
+.btn-3d-green {
+  background: linear-gradient(180deg, #2A9D8F 0%, #107063 100%);
+  box-shadow: 0 6px 0 #08433B, 0 12px 20px rgba(42, 157, 143, 0.35);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-3d-green:active {
+  transform: translateY(4px) translateZ(0);
+  box-shadow: 0 2px 0 #08433B, 0 4px 10px rgba(42, 157, 143, 0.2);
+}
+
+.btn-3d-pink {
+  background: linear-gradient(180deg, #FF70A6 0%, #FF4081 100%);
+  box-shadow: 0 6px 0 #C2185B, 0 12px 20px rgba(255, 64, 129, 0.35);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-3d-pink:active {
+  transform: translateY(4px) translateZ(0);
+  box-shadow: 0 2px 0 #C2185B, 0 4px 10px rgba(255, 64, 129, 0.2);
+}
+
+/* Torn Paper Edge Mask / Effect */
+.torn-edge-top {
+  clip-path: polygon(
+    0% 0%, 100% 0%, 
+    100% 85%, 95% 100%, 90% 87%, 85% 98%, 80% 88%, 
+    75% 99%, 70% 89%, 65% 97%, 60% 86%, 55% 99%, 
+    50% 88%, 45% 97%, 40% 85%, 35% 98%, 30% 87%, 
+    25% 99%, 20% 86%, 15% 98%, 10% 88%, 5% 99%, 0% 87%
+  );
+}
+
+.torn-edge-bottom {
+  clip-path: polygon(
+    0% 12%, 5% 0%, 10% 14%, 15% 1%, 20% 13%, 25% 0%, 
+    30% 12%, 35% 1%, 40% 14%, 45% 2%, 50% 13%, 55% 0%, 
+    60% 14%, 65% 2%, 70% 13%, 75% 0%, 80% 12%, 85% 1%, 
+    90% 13%, 95% 0%, 100% 12%, 100% 100%, 0% 100%
+  );
+}
+
+/* Scrapbook Masking Tape Graphic Effect */
+.tape-top {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg) translateZ(30px);
+  width: 120px;
+  height: 30px;
+  background-color: rgba(255, 235, 205, 0.85);
+  border-left: 2px dashed rgba(210, 170, 140, 0.6);
+  border-right: 2px dashed rgba(210, 170, 140, 0.6);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+  backdrop-filter: blur(2px);
+  z-index: 30;
+}
+
+.tape-corner-tl {
+  position: absolute;
+  top: -12px;
+  left: -18px;
+  transform: rotate(-35deg) translateZ(30px);
+  width: 80px;
+  height: 26px;
+  background-color: rgba(255, 220, 225, 0.9);
+  border-left: 2px dashed rgba(220, 160, 170, 0.7);
+  border-right: 2px dashed rgba(220, 160, 170, 0.7);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.12);
+  z-index: 30;
+}
+
+.tape-corner-tr {
+  position: absolute;
+  top: -12px;
+  right: -18px;
+  transform: rotate(35deg) translateZ(30px);
+  width: 80px;
+  height: 26px;
+  background-color: rgba(255, 220, 225, 0.9);
+  border-left: 2px dashed rgba(220, 160, 170, 0.7);
+  border-right: 2px dashed rgba(220, 160, 170, 0.7);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.12);
+  z-index: 30;
+}
+
+/* Custom Keyframe Animations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+@keyframes float-3d {
+  0%, 100% { transform: translateY(0px) rotateX(0deg) rotateY(0deg); }
+  50% { transform: translateY(-10px) rotateX(4deg) rotateY(-4deg); }
+}
+
+.animate-float-3d {
+  animation: float-3d 5s ease-in-out infinite;
+}
